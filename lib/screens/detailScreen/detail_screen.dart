@@ -1,10 +1,9 @@
-import 'package:ecommerce_application/cart.dart';
-import 'package:ecommerce_application/homeScreen.dart';
 import 'package:ecommerce_application/utils/list.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'home/component/colors/color.dart';
+
+import '../../home/component/colors/color.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key});

@@ -1,8 +1,8 @@
 import 'package:ecommerce_application/utils/list.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
-import 'detail_screen.dart';
-import 'home/component/colors/color.dart';
+import '../../home/component/colors/color.dart';
+import '../detailScreen/detail_screen.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -50,10 +50,10 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ],
                 ),
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Discount : ',
                       style: TextStyle(
                         color: Colors.white,
@@ -61,8 +61,8 @@ class _CartScreenState extends State<CartScreen> {
                       ),
                     ),
                     Text(
-                      '5000',
-                      style: TextStyle(
+                      (amount>0)?'3000':'0.0',
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 25,
                       ),
@@ -80,7 +80,7 @@ class _CartScreenState extends State<CartScreen> {
                       ),
                     ),
                     Text(
-                      (amount > 0) ? '${amount - 5000}' : '0.0',
+                      (amount > 0) ? '${amount - 3000}' : '0.0',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 25,

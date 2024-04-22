@@ -1,7 +1,8 @@
+import 'package:ecommerce_application/screens/cartScreen/cart.dart';
+import 'package:ecommerce_application/screens/detailScreen/detail_screen.dart';
+import 'package:ecommerce_application/screens/homeScreen/homeScreen.dart';
+import 'package:ecommerce_application/screens/splashScreen/splashScreen.dart';
 import 'package:flutter/material.dart';
-import 'cart.dart';
-import 'detail_screen.dart';
-import 'homeScreen.dart';
 
 void main(){
   runApp(const MyApp());
@@ -13,12 +14,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-         initialRoute: '/cart',
+      initialRoute: '/',
       routes: {
-         '/':(context) => HomeScreen(),
-         '/detail' : (context) => DetailScreen(),
+        '/': (context) => SplashScreen(),
+        '/home':(context) => HomeScreen(),
+        '/detail' : (context) => DetailScreen(),
         '/cart' : (context) => CartScreen(),
-       },
+      },
+
     );
   }
 }
