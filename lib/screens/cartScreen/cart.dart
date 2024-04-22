@@ -1,8 +1,8 @@
 import 'package:ecommerce_application/utils/list.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
-import 'detail_screen.dart';
-import 'home/component/colors/color.dart';
+import '../../home/component/colors/color.dart';
+import '../detailScreen/detail_screen.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -16,79 +16,22 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: BottomAppBar(
-          elevation: 50,
-          shadowColor: Colors.cyan,
-          height: 200,
-          color: colorBlack2,
-          child: Container(
-            alignment: Alignment.center,
+        bottomNavigationBar: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushNamed('/check');
+          },
+          child: BottomAppBar(
+            elevation: 50,
             height: 80,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Price : ',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                      ),
-                    ),
-                    Text(
-                      '$amount',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                      ),
-                    ),
-                  ],
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Discount : ',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                      ),
-                    ),
-                    Text(
-                      '5000',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Total Price : ',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                      ),
-                    ),
-                    Text(
-                      (amount > 0) ? '${amount - 5000}' : '0.0',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+            color: colorBlack2,
+            child: Container(
+              alignment: Alignment.center,
+              height: 80,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text('Checkout', style: TextStyle(color: Colors.white, fontSize: 25),),
             ),
           ),
         ),

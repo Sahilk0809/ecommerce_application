@@ -1,8 +1,7 @@
 import 'package:ecommerce_application/utils/list.dart';
 import 'package:flutter/Material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'home/component/colors/color.dart';
+import '../../home/component/colors/color.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -39,16 +38,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       margin: const EdgeInsets.only(left: 10, top: 20),
                       child: Row(
                         children: [
+                          Container(
+                            margin: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: colorBlack2,
+                              image: const DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage('assets/mobileImg/profile.jpg'),
+                              ),
+                            ),
+                          ),
                           const Text(
-                            'Sahil...',
+                            'Sahil Kashyap',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 25,
-                              fontWeight: FontWeight.w800,
                             ),
                           ),
                           const SizedBox(
-                            width: 255,
+                            width: 115,
                           ),
                           GestureDetector(
                             onTap: () {
@@ -102,6 +113,25 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ],
+                ),
+                Container(
+                  margin: EdgeInsets.all(10),
+                  height: 165,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    gradient: LinearGradient(
+                      colors: [
+                        colorBlack1,
+                        colorBlack2,
+                      ],
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                    ),
+                    image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/mobileImg/banner.avif'),),
+                  ),
                 ),
                 Column(
                   children: List.generate(
@@ -172,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    boolName=true;
+                    boolName = true;
                     selectedIndex = index;
                     Navigator.of(context).pushNamed('/detail');
                   });
@@ -284,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    boolName=false;
+                    boolName = false;
                     selectedIndex = index;
                     Navigator.of(context).pushNamed('/detail');
                   });
@@ -296,7 +326,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
                         image: AssetImage(productDetails2[index]['img']),
-                        fit: BoxFit.cover),
+                        fit: BoxFit.contain),
                   ),
                 ),
               ),

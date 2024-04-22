@@ -1,12 +1,27 @@
-import 'package:ecommerce_application/cart.dart';
-import 'package:ecommerce_application/homeScreen.dart';
 import 'package:ecommerce_application/utils/list.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'home/component/colors/color.dart';
+
+import '../../home/component/colors/color.dart';
 
 class DetailScreen extends StatefulWidget {
+  showOverlay(BuildContext context) async {
+    OverlayState overlayState = Overlay.of(context);
+    OverlayEntry overlayEntry = OverlayEntry(builder: (context)=> Positioned(bottom: 40,child: Container(
+      height: 40,
+      width: 150,
+      decoration: BoxDecoration(
+        color: colorBlack1,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: const Text('Added successfully in the cart', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500,),),
+    ),),);
+    overlayState.insert(overlayEntry);
+
+    await Future.delayed(Duration(seconds: 2,));
+    overlayEntry.remove();
+  }
   const DetailScreen({super.key});
 
   @override
