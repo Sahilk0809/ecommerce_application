@@ -1,5 +1,5 @@
-import 'package:ecommerce_application/checkOutScreen/check_out.dart';
 import 'package:ecommerce_application/screens/cartScreen/cart.dart';
+import 'package:ecommerce_application/screens/checkOutScreen/check_out.dart';
 import 'package:ecommerce_application/screens/detailScreen/detail_screen.dart';
 import 'package:ecommerce_application/screens/homeScreen/homeScreen.dart';
 import 'package:ecommerce_application/screens/splashScreen/splashScreen.dart';

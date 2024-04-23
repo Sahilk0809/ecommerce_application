@@ -1,6 +1,7 @@
 import 'package:ecommerce_application/home/component/colors/color.dart';
 import 'package:flutter/material.dart';
-import '../screens/detailScreen/detail_screen.dart';
+
+import '../detailScreen/detail_screen.dart';
 
 class CheckOutScreen extends StatefulWidget {
   const CheckOutScreen({super.key});
